@@ -1,15 +1,22 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import FormBlock from '../components/Form'
+import LandinPage from '../components/Home'
+import Menu from '../components/Menu'
+import styles from '../styles/Home.module.scss'
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.root}>
       <Head>
         <title>Fudo</title>
       </Head>
-
+    <div>
+      <LandinPage />
+      <FormBlock />
+      <Menu />
+    </div>
     </div>
   )
 }
