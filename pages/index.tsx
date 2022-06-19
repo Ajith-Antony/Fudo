@@ -11,6 +11,7 @@ const Home: NextPage = () => {
     <div className={styles.root}>
       <Head>
         <title>Fudo</title>
+        <link rel="logo icon" href="/logoicon.png" />
       </Head>
     <div>
       <LandinPage />

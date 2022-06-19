@@ -1,8 +1,152 @@
-$primary-bg: #FAF7F2;
+$primary-bg: #faf7f2;
 $primary-text: #292929;
 $secondary-text: #666666;
-.root{
-    background-color: $primary-bg;
-    width:100%;
-    height:883px;
+$button-primary: #fdc913;
+.root {
+  background-color: $primary-bg;
+  width: 100%;
+  font-family: "Martel";
+  font-style: normal;
+  padding: 40px 380px;
+}
+.nav {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    height: 40px;
+  }
+  .navItems {
+    display: flex;
+    gap: 60px;
+    a {
+      cursor: pointer;
+      font-family: "Martel";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      &:hover {
+        border-bottom: 1px solid $button-primary;
+      }
+    }
+  }
+  .loginBlock {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    img {
+      position: relative;
+    }
+    p {
+      position: absolute;
+      height: 16px;
+      aspect-ratio: 1;
+      top: 25px;
+      right: 500px;
+      font-weight: 400;
+      font-size: 12px;
+      background-color: #d80027;
+      border-radius: 50%;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    button {
+      cursor: pointer;
+      height: 40px;
+      padding: 10px 32px;
+      gap: 10px;
+      background-color: $button-primary;
+      border: none;
+      border-radius: 20px;
+      font-family: "Martel";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      &:hover {
+        background-color: #fdc953;
+      }
+    }
+  }
+}
+.cover {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  padding: 30px 0px;
+  .heading {
+    position: absolute;
+    left: 0px;
+    width: 60%;
+    h3 {
+      font-family: "Martel";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 56px;
+    }
+    h4 {
+      font-family: "DM Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+    }
+    button {
+      cursor: pointer;
+      padding: 16px 56px;
+      gap: 10px;
+      background-color: $button-primary;
+      border: none;
+      border-radius: 20px;
+      font-family: "Martel";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      &:hover {
+        background-color: #fdc953;
+      }
+    }
+  }
+  img {
+    width: 600px;
+  }
+}
+.contactSection {
+  padding: 60px 0;
+  display: flex;
+  justify-content: space-between;
+  .contactCard {
+    padding: 20px;
+    width: 365px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    img {
+      height: 64px;
+    }
+    h3,
+    h4 {
+      margin: 0;
+      color: $secondary-text;
+    }
+    h3 {
+      padding-top: 30px;
+      font-family: "DM Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+    }
+    h4 {
+      padding-top: 10px;
+      font-family: "Martel";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
 }
