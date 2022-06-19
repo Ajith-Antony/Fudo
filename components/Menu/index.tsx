@@ -1,6 +1,7 @@
 import { useEffect } from "react";
+import { Audio, Bars, Grid } from "react-loader-spinner";
 import { useDispatch, useSelector } from "react-redux";
-import { getCategories } from "../../redux/actions";
+import { getCategories, getCategoryData } from "../../redux/actions";
 import { SET_CATEGORY } from "../../redux/types";
 import { Icons } from "../Home/Contacts";
 import styles from "./styles.module.scss";
@@ -11,8 +12,26 @@ const Menu = () => {
   useEffect(() => {
     dispatch(getCategories() as any);
   }, []);
+  useEffect(() => {
+    dispatch(getCategoryData(reducer?.rootReducer?.category) as any);
+  }, [reducer?.rootReducer?.category]);
   const onCategoryChange = (category: "string") => {
     dispatch({ type: SET_CATEGORY, payload: category });
+  };
+  const getCard = (item: any) => {
+    debugger;
+    const src = Icons(reducer?.rootReducer?.category);
+    return (
+      <div className={styles.itemCard}>
+        <img src={src} />
+        <h3>{item?.title}</h3>
+        <h4>{`${item?.currency} ${item?.price}`}</h4>
+        <span>
+          <h3>Add to cart</h3>
+          <img src="/images/cart.png" />
+        </span>
+      </div>
+    );
   };
   return (
     <div className={styles.menuCover}>
@@ -39,7 +58,17 @@ const Menu = () => {
           </span>
         ))}
       </div>
-      <div className={styles.listItems}></div>
+      <div className={styles.listItems}>
+        {reducer?.rootReducer?.categoryData?.loading ? (
+          <div className={styles.loader}>
+            <Bars color="#666666" height={80} width={80} />
+          </div>
+        ) : (
+          reducer?.rootReducer?.categoryData?.data
+            ?.slice(0, 4)
+            .map((item: any) => getCard(item))
+        )}
+      </div>
     </div>
   );
 };

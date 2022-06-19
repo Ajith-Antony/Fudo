@@ -1,11 +1,11 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import FormBlock from '../components/Form'
-import LandinPage from '../components/Home'
-import Menu from '../components/Menu'
-import styles from '../styles/Home.module.scss'
-
+import type { NextPage } from "next";
+import Head from "next/head";
+import Image from "next/image";
+import FormBlock from "../components/Form";
+import LandinPage from "../components/Home";
+import Menu from "../components/Menu";
+import styles from "../styles/Home.module.scss";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 const Home: NextPage = () => {
   return (
     <div className={styles.root}>
@@ -13,13 +13,13 @@ const Home: NextPage = () => {
         <title>Fudo</title>
         <link rel="logo icon" href="/logoicon.png" />
       </Head>
-    <div>
-      <LandinPage />
-      <FormBlock />
-      <Menu />
+      <div>
+        <LandinPage />
+        <FormBlock />
+        <Menu />
+      </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

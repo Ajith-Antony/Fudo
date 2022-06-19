@@ -1,8 +1,14 @@
-import { GET_CATEGORY_DATA, GET_CONTACT_DATA, SET_CATEGORY } from "./types";
+import {
+  GET_CATEGORY_DATA,
+  GET_CATEGORY_DATAS,
+  GET_CONTACT_DATA,
+  SET_CATEGORY,
+} from "./types";
 const initialState = {
   contacts: { data: [], loading: false },
   categories: { data: [], loading: false },
   category: "pizza",
+  categoryData: { data: [], loading: false },
 };
 
 export default function (
@@ -24,6 +30,11 @@ export default function (
       return {
         ...state,
         category: action.payload,
+      };
+    case GET_CATEGORY_DATAS:
+      return {
+        ...state,
+        categoryData: action.payload,
       };
     default:
       return state;

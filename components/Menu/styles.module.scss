@@ -39,4 +39,55 @@
       border-bottom: 1px solid black;
     }
   }
+  .listItems {
+    display: flex;
+    padding: 20px 0;
+    gap: 20px;
+    .loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .itemCard {
+      border-radius: 20px;
+      background-color: #faf7f2;
+      img {
+        width: 225px;
+        background-color: white;
+      }
+      h3 {
+        display: flex;
+        justify-content: center;
+        font-family: "Martel";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        color: #666666;
+      }
+      h4 {
+        display: flex;
+        justify-content: center;
+        font-family: "DM Sans";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+      }
+      span {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 0px 5px;
+        justify-content: space-around;
+        font-family: "Martel";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        color: #666666;
+        img {
+          height: 30px;
+          width: 30px;
+        }
+      }
+    }
+  }
 }
