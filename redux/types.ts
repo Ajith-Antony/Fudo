@@ -1,0 +1,1 @@
+export const GET_CONTACT_DATA = "GET_CONTACT_DATA";
