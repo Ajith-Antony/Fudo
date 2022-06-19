@@ -5,7 +5,7 @@ import rootReducer from "./reducer";
 import { combineReducers } from "redux";
 import { createWrapper } from "next-redux-wrapper";
 let reducer = combineReducers({
-  usersList: rootReducer,
+  rootReducer: rootReducer,
 });
 const initalState = {};
 

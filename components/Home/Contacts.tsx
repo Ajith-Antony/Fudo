@@ -1,22 +1,38 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getContacts } from "../../redux/actions";
 import styles from "./style.module.scss";
 const Contacts = () => {
-  const Icons = {
-    "working-hours": "/images/Calendar.png",
-    "store-location": "/images/Location.png",
-    "contact-number": "/images/Call.png",
+  const reducer = useSelector((state) => state) as any;
+  const dispatch = useDispatch();
+  const Icons = (type: any) => {
+    switch (type) {
+      case "working-hours":
+        return "/images/Calendar.png";
+      case "store-location":
+        return "/images/Location.png";
+      case "contact-number":
+        return "/images/Call.png";
+      default:
+        break;
+    }
   };
-  const getCard = () => (
-    <div className={styles.contactCard}>
-      <img src={Icons["working-hours"]} />
-      <h3>Trails End Road Ft United States</h3>
-      <h4>Store Location</h4>
-    </div>
-  );
+  useEffect(() => {
+    dispatch(getContacts() as any);
+  }, []);
+  const getCard = (item: any) => {
+    const src = Icons(item?.slug);
+    return (
+      <div className={styles.contactCard}>
+        <img src={src} />
+        <h3>{item?.description}</h3>
+        <h4>{item?.title}</h4>
+      </div>
+    );
+  };
   return (
     <div className={styles.contactSection}>
-      {getCard()}
-      {getCard()}
-      {getCard()}
+      {reducer?.rootReducer?.contacts?.data?.map((item: any) => getCard(item))}
     </div>
   );
 };
