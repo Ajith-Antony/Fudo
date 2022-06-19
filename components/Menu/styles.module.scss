@@ -1,0 +1,42 @@
+.menuCover {
+  padding: 0px 12rem;
+  .headings {
+    width: 60%;
+    h3 {
+      font-family: "Manrope";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 50px;
+      color: #292929;
+    }
+    h4 {
+      font-family: "DM Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      color: #666666;
+    }
+  }
+  .menuList {
+    display: flex;
+    span {
+      padding: 0 50px;
+      border-radius: 5px 5px 0px 0px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      img {
+        height: 36px;
+        aspect-ratio: 1;
+      }
+    }
+    .active {
+      border: 1px solid black;
+      border-bottom: none;
+    }
+    .inactive {
+      border-bottom: 1px solid black;
+    }
+  }
+}
